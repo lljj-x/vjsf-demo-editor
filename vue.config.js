@@ -62,7 +62,7 @@ module.exports = {
         };
         config.resolve.alias = {
             ...config.resolve.alias,
-            'demo-common': path.resolve(__dirname, './src/common'),
+            'demo-common': path.resolve(__dirname, './src/demo-common'),
             // '@lljj/vue-json-schema-form': '@lljj/vue-json-schema-form/src/index',
             // '@lljj/vue2-form-iview3': '@lljj/vue2-form-iview3/src/index',
         };
