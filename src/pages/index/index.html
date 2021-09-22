@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var __replaceUrl = ~window.location.host.indexOf('buhuida.com') ? window.location.href.replace(/.*?buhuida\.com/, 'https://form.lljj.me') : (window.location.protocol === 'http:' && ~window.location.host.indexOf('lljj.me') ? window.location.href.replace(/^http/, 'https') : '');
+        __replaceUrl && window.location.replace(__replaceUrl);
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JSON Schema form editor - VJSF</title>
+    <meta name="description" content="vue-json-schema-form - 基于JSON Schema动态创建表单在线演示编辑器" />
+    <link rel="icon" href="https://vue-json-schema-form.lljj.me/icons/ico.png">
+    <link rel="apple-touch-icon" href="https://vue-json-schema-form.lljj.me/icons/ico.png">
+</head>
+<body>
+    <div id="app"></div>
+    <script src="//cdn.jsdelivr.net/npm/@lljj/polyfill@0.1.1/dist/polyfill.umd.min.js"></script>
+    <script src="//cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/element-ui@2.13.1/lib/index.js"></script>
+    <script src="//cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs/loader.js"></script>
+    <script>
+        require.config({ paths: { 'vs': '//cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs' }});
+
+        try {
+            // https://github.com/microsoft/monaco-editor/blob/master/docs/integrate-amd-cross.md
+            window.MonacoEnvironment = {
+                getWorkerUrl: function(workerId, label) {
+                    const code = encodeURIComponent(`
+                    self.MonacoEnvironment = {
+                      baseUrl: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/'
+                    };
+                    importScripts('https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs/base/worker/workerMain.js');
+                `);
+
+                    return 'data:text/javascript;charset=utf-8,' + code;
+                }
+            };
+        } catch (e) {
+            // nothing ....
+        }
+    </script>
+</body>
+</html>

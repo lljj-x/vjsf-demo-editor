@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "id": "Coupon",
+    "type": "object",
+    "properties": {
+        "show": {
+            "title": "显示状态",
+            "description": "优惠券模块不可编辑，系统会自动抓取您已经创建的优惠券，按照优惠券力度由大到小进行排列 。",
+            "type": "boolean",
+            "default": true,
+            "ui:disabled": true
+        }
+    },
+    "required": [
+        "show"
+    ]
+}
