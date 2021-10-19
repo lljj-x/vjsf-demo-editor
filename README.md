@@ -5,17 +5,17 @@
 
 ### 启动方法
 ```
-# 安装，或者yarn
-npm install
+# 安装，请使用 yarn
+yarn
 
 # 开发环境
-npm run dev
+yarn dev
 
 # 浏览器访问
 http://127.0.0.1:8800/vue-editor.html
 
 # build
-npm run build
+yarn build
 
 ```
 
